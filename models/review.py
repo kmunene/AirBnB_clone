@@ -5,6 +5,7 @@ Module containing the Review class, a subclass of BaseModel.
 
 from models.base_model import BaseModel
 
+
 class Review(BaseModel):
     """
     Review class represents a review for a place in the AirBnB application.
@@ -14,7 +15,7 @@ class Review(BaseModel):
         user_id (str): The ID of the user who wrote the review.
         text (str): The text content of the review.
     """
-    
+
     place_id = ""
     user_id = ""
     text = ""
