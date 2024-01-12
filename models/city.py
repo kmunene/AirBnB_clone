@@ -5,6 +5,7 @@ Module containing the City class, a subclass of BaseModel.
 
 from models.base_model import BaseModel
 
+
 class City(BaseModel):
     """
     City class represents a city in the AirBnB application.
