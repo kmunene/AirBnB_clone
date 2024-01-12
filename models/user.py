@@ -5,6 +5,7 @@ Module containing the User class, a subclass of BaseModel.
 
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """
     User class represents a user in the AirBnB application.
@@ -15,7 +16,7 @@ class User(BaseModel):
         first_name (str): The first name of the user.
         last_name (str): The last name of the user.
     """
-    
+
     email = ""
     password = ""
     first_name = ""
