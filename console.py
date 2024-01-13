@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Module for the entry of the console"""
+
 import cmd
 import re
 import models
