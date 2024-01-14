@@ -356,7 +356,7 @@ class HBNBCommand(cmd.Cmd):
                 print("** value missing **")
                 return
 
-            attr_value = rest[2]
+            attr_value = rest[2].strip('"')
 
             obj = models.storage.all()[key]
 
