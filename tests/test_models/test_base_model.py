@@ -20,11 +20,11 @@ class TestBaseModel(unittest.TestCase):
         self.assertBaseModelAttributesExist()
 
     def test_string_representation(self):
-        string_repr = str(self.base_model)
-        self.assertIn("[BaseModel]", string_repr)
-        self.assertIn("id", string_repr)
-        self.assertIn("created_at", string_repr)
-        self.assertIn("updated_at", string_repr)
+        str_representation = str(self.base_model)
+        self.assertIn("[BaseModel]", str_representation)
+        self.assertIn("id", str_representationr)
+        self.assertIn("created_at", str_representation)
+        self.assertIn("updated_at", str_representation)
 
     def test_save_method(self):
         initial_updated_at = self.base_model.updated_at
