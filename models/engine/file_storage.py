@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import json
 from os.path import exists
+
 from models.base_model import BaseModel
 from models.user import User
 from models.state import State
@@ -65,7 +66,7 @@ class FileStorage:
         """
         serialized_objects = {key: obj.to_dict() for key,
                               obj in FileStorage.__objects.items()}
-        with open(FileStorage.__file_path, 'w') as file:
+        with open(FileStorage.__file_path, "w", encoding="utf-8") as file:
             json.dump(serialized_objects, file)
 
     def reload(self):
@@ -73,7 +74,7 @@ class FileStorage:
         Deserialize and reload objects from the JSON file.
         """
         try:
-            with open(FileStorage.__file_path, 'r') as file:
+            with open(FileStorage.__file_path, "r", encoding="utf-8") as file:
                 loaded_objects = json.load(file)
                 for key, obj_dict in loaded_objects.items():
                     class_name, obj_id = key.split('.')
