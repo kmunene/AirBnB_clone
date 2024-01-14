@@ -42,6 +42,18 @@ class testHBNBCommand(unittest.TestCase):
             HBNBCommand().onecmd("\n")
 
             self.assertEqual("", f.getvalue().strip())
+    
+    def test_help(self):
+        """Tests the help command."""
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("help") 
+        output = """
+Documented commands (type help <topic>):
+========================================
+EOF  all  create  destroy  help  quit  show  update
+
+"""
+        self.assertEqual(output, f.getvalue())
 
     def test_help_quit(self):
         """
