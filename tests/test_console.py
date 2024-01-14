@@ -33,6 +33,16 @@ class testHBNBCommand(unittest.TestCase):
         if os.path.isfile(file_path):
             os.remove(file_path)
 
+    def test_prompt_string(self):
+        """Checks HBNBCommand class prompt"""
+        self.assertEqual("(hbnb) ", HBNBCommand.prompt)
+
+    def test_empty_line(self):
+        with patch('sys.stdout', new=StringIO()) as f:
+            HBNBCommand().onecmd("\n")
+
+            self.assertEqual("", f.getvalue().strip())
+
     def test_help_quit(self):
         """
         Test help command for quit.
