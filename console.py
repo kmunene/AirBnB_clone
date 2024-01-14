@@ -205,6 +205,7 @@ class HBNBCommand(cmd.Cmd):
         """
         EOF command to exit the program
         """
+        print()
         return True
 
     def emptyline(self):
@@ -318,8 +319,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_update(self, arg):
         """
-        Update an instance based on its ID with either attribute
-        name and value
+        Update an instance based on its ID
         """
         classes = [BaseModel, User, State, City, Amenity, Place, Review]
 
